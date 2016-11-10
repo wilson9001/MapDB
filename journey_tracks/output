@@ -1,0 +1,16 @@
+nohup: ignoring input
+Connected
+[0mGET / [32m200 [0m10.633 ms - 3382[0m
+[0mGET /stylesheets/style.css [32m200 [0m2.482 ms - 1027[0m
+In the GET route?
+data returned from database is: { _id: 5824ea8eef802b46d2f918a2,
+  lattitude: '42.3600825',
+  longitude: '-71.05888010000001',
+  __v: 0 },{ _id: 5824ea99ef802b46d2f918a3,
+  lattitude: '38.7222524',
+  longitude: '-9.139336599999979',
+  __v: 0 },{ _id: 5824eb52ef802b46d2f918a4,
+  lattitude: '44.71507889999999',
+  longitude: '-67.46137599999997',
+  __v: 0 }
+[0mGET /location [32m200 [0m33.254 ms - 311[0m

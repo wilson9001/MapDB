@@ -6,10 +6,11 @@ mongoose.connect('mongodb://localhost/locationsDB');
 
 var locationSchema = mongoose.Schema(
     {
-      location : Object
+      lattitude : String,
+      longitude : String
     })
 
-    var point = mongoose.model('point', locationSchema);
+    var Point = mongoose.model('Point', locationSchema);
 
     var db = mongoose.connection;
 
@@ -28,13 +29,16 @@ router.post('/location', function(req, res, next)
 {
   console.log("POST Location Route");
 
-var newlocation = new location(req.body);
-console.log(newlocation);
+var newlocation = new Point(req.body);
+
+console.log("newlocation created.");
+
+console.log("newlocation data is: " + newlocation);
 
 newlocation.save(function(err, post)
 {
   if(err) return console.error(err);
-  console.log(post);
+  console.log("Saved Data is: "+post);
   res.sendStatus(200);
 });
 
@@ -43,12 +47,12 @@ newlocation.save(function(err, post)
 router.get('/location', function(req, res, next)
 {
   console.log("In the GET route?");
-  point.find(function(err,locationList)
+  Point.find(function(err,locationList)
   {
     if(err) return console.error(err);
     else
     {
-      console.log(locationList);
+      console.log("data returned from database is: "+locationList);
       res.json(locationList);
     }
   })
